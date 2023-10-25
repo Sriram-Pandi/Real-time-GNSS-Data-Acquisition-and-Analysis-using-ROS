@@ -1,0 +1,5 @@
+﻿Dependencies:
+
+No specific dependencies required.
+
+'rosdep' is used to install any specific dependencies based on the errors obtained
