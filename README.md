@@ -23,3 +23,9 @@ In this project, I implemented a comprehensive system to acquire and analyze dat
 6. **Repository Organization**: Maintained a clean and structured repository layout, facilitating easy access and understanding of the project components, including the device driver, data analysis scripts, data files, and the comprehensive report.
 
 This project, rooted in ROS, offers invaluable insights into the functioning of GNSS systems, especially in the realms of robotics navigation and outdoor positioning. Through hands-on experience, I gained a deeper understanding of GNSS data intricacies and the potential applications and limitations of such systems in real-world scenarios.
+
+## Run the recorded-data analysis
+
+Install the [analysis dependencies](src/analysis-scripts/requirements.txt), then run `python src/analysis-scripts/plots.py` from the repository root. The script reads the included [moving and stationary bags](src/data) and extracts the `/gps` topic.
+
+For live acquisition from a built ROS 1 catkin workspace, run `roslaunch gps_driver driver.launch port:=/dev/ttyUSB0` with the actual receiver port.
