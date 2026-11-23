@@ -1,11 +1,13 @@
-import bagpy
+from pathlib import Path
+
 from bagpy  import bagreader
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-movbg=bagreader('/home/sriram/EECE5554/LAB1/src/data/movingbag1_2022-09-26-13-45-56.bag')
-statbg=bagreader('/home/sriram/EECE5554/LAB1/src/data/statbag1_2022-09-26-13-37-12.bag')
+data_dir = Path(__file__).resolve().parents[1] / 'data'
+movbg = bagreader(str(data_dir / 'movingbag1_2022-09-26-13-45-56.bag'))
+statbg = bagreader(str(data_dir / 'statbag1_2022-09-26-13-37-12.bag'))
 data = movbg.message_by_topic('/gps')
 data1 = statbg.message_by_topic('/gps')
 df_mov = pd.read_csv(data)
