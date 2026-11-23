@@ -29,3 +29,7 @@ This project, rooted in ROS, offers invaluable insights into the functioning of 
 Install the [analysis dependencies](src/analysis-scripts/requirements.txt), then run `python src/analysis-scripts/plots.py` from the repository root. The script reads the included [moving and stationary bags](src/data) and extracts the `/gps` topic.
 
 For live acquisition from a built ROS 1 catkin workspace, run `roslaunch gps_driver driver.launch port:=/dev/ttyUSB0` with the actual receiver port.
+
+## Verification checklist
+
+Begin with the stationary and moving recordings bundled under `src/data/`. Confirm that the bag reader exports `/gps` and the CSV columns include latitude, longitude, UTM easting, and UTM northing. The plotting script produces stationary and moving views from those values. The live path separately requires a ROS 1 workspace and access to the receiver’s serial port.
